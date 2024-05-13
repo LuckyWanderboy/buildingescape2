@@ -46,16 +46,16 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	float Reach = 100;
 	FVector LineTraceEnd = PlayerViewPL + (PlayerViewPR.Vector() * Reach);
 
-	DrawDebugLine(
-		GetWorld(),
-		PlayerViewPL,
-		LineTraceEnd,
-		FColor(255, 0 ,0),
-		false,
-		0.f,
-		0.f,
-		1.f
-	);
+	//DrawDebugLine(
+	//	GetWorld(),
+	//	PlayerViewPL,
+	//	LineTraceEnd,
+	//	FColor(255, 0 ,0),
+	//	false,
+	//	0.f,
+	//	0.f,
+	//	1.f
+	//);
 
 
 	FCollisionQueryParams TraceParameters(FName(TEXT("")), false, GetOwner());
