@@ -32,30 +32,29 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	FVector PlayerViewPL;
 	FRotator PlayerViewPR;
 
-
-
-	///Getplayer view point tick
+	//Getplayer view point tick
 	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(
 		OUT PlayerViewPL, 
 		OUT PlayerViewPR);
 
 	//Ray casting to reach distance
-	//UE_LOG(LogTemp, Warning, TEXT("Test Location: %s, Positions: %s"),
+	//UE_LOG(LogTemp, Warning, TEXT("Loc: %s, Pos: %s"),
 	//	*PlayerViewPL.ToString(),
 	//	*PlayerViewPR.ToString())
-	float Reach = 100;
+	
+	float Reach = 200;
 	FVector LineTraceEnd = PlayerViewPL + (PlayerViewPR.Vector() * Reach);
 
-	//DrawDebugLine(
-	//	GetWorld(),
-	//	PlayerViewPL,
-	//	LineTraceEnd,
-	//	FColor(255, 0 ,0),
-	//	false,
-	//	0.f,
-	//	0.f,
-	//	1.f
-	//);
+	DrawDebugLine(
+		GetWorld(),
+		PlayerViewPL,
+		LineTraceEnd,
+		FColor(255, 0 ,0),
+		false,
+		0.f,
+		0.f,
+		1.f
+	);
 
 
 	FCollisionQueryParams TraceParameters(FName(TEXT("")), false, GetOwner());
